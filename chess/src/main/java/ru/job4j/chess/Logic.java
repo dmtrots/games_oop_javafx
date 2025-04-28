@@ -21,6 +21,14 @@ public final class Logic {
     }
 
     private boolean free(Cell[] steps) throws OccupiedCellException {
+        for (Cell step : steps) {
+            for (int i = 0; i < index; i++) {
+                Figure figure = figures[i];
+                if (figure != null && figure.position().equals(step)) {
+                    throw new OccupiedCellException();
+                }
+            }
+        }
         return true;
     }
 
@@ -29,7 +37,7 @@ public final class Logic {
         index = 0;
     }
 
-    private int findBy(Cell cell) throws FigureNotFoundException {
+    int findBy(Cell cell) throws FigureNotFoundException {
         for (int index = 0; index != figures.length; index++) {
             Figure figure = figures[index];
             if (figure != null && figure.position().equals(cell)) {
