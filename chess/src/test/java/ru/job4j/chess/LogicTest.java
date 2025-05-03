@@ -29,7 +29,8 @@ public class LogicTest {
     }
 
     @Test
-    void whenMoveDiagonalThenReturnCorrectSteps() throws OccupiedCellException, FigureNotFoundException {
+    void whenMoveDiagonalThenReturnCorrectSteps() throws OccupiedCellException,
+            FigureNotFoundException {
         Figure bishop = new BishopBlack(Cell.C1);
 
         Cell[] steps = bishop.way(Cell.G5);
@@ -37,7 +38,6 @@ public class LogicTest {
         Cell[] expected = {Cell.D2, Cell.E3, Cell.F4, Cell.G5};
 
         assertArrayEquals(expected, steps);
-
     }
 
     @Test
