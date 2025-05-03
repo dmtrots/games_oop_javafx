@@ -12,7 +12,7 @@ import static org.junit.Assert.*;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class LogicTest {
-    Logic logic = new Logic();
+   private Logic logic = new Logic();
 
     public void setUp() {
         logic = new Logic();
